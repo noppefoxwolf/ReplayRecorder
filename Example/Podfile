@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ReplayRecorder_Example' do
+  pod 'ReplayRecorder', :path => '../'
+
+  target 'ReplayRecorder_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
