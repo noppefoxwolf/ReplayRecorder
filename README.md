@@ -42,3 +42,7 @@ noppefoxwolf, noppelabs@gmail.com
 ## License
 
 ReplayRecorder is available under the MIT license. See the LICENSE file for more info.
+
+## Special Thanks
+
+https://qiita.com/fromkk/items/7ce619528848986f27da
