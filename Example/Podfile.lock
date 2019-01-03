@@ -1,0 +1,16 @@
+PODS:
+  - ReplayRecorder (0.1.0)
+
+DEPENDENCIES:
+  - ReplayRecorder (from `../`)
+
+EXTERNAL SOURCES:
+  ReplayRecorder:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ReplayRecorder: 5016b1c5dddbc33a3779d598bbede23086414dd1
+
+PODFILE CHECKSUM: 084f96db332d209f943138539f17ae4328af1fd1
+
+COCOAPODS: 1.6.0.beta.2

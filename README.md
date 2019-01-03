@@ -1,9 +1,24 @@
-# ReplayRecorder
+<h1 align="center">
+ReplayRecorder
+<br>
+</h1>
 
-[![CI Status](https://img.shields.io/travis/noppefoxwolf/ReplayRecorder.svg?style=flat)](https://travis-ci.org/noppefoxwolf/ReplayRecorder)
-[![Version](https://img.shields.io/cocoapods/v/ReplayRecorder.svg?style=flat)](https://cocoapods.org/pods/ReplayRecorder)
-[![License](https://img.shields.io/cocoapods/l/ReplayRecorder.svg?style=flat)](https://cocoapods.org/pods/ReplayRecorder)
-[![Platform](https://img.shields.io/cocoapods/p/ReplayRecorder.svg?style=flat)](https://cocoapods.org/pods/ReplayRecorder)
+## Usage
+
+```
+let configuration: Configuration = Configuration()
+let recorder = ReplayRecorder(configuration: configuration)
+recorder.cropRect = CGRect(x: 0.2, y: 0.2, width: 0.5, height: 0.5)
+recorder.filter = CIFilter(name: "CISepiaTone")
+
+...
+recorder.startRecording()
+...
+
+recorder.stopRecording { (url, error) in
+  // saved url
+}
+```
 
 ## Example
 
