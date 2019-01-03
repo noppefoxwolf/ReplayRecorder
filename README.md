@@ -5,7 +5,7 @@ ReplayRecorder
 
 ## Usage
 
-```
+```swift
 let configuration: Configuration = Configuration()
 let recorder = ReplayRecorder(configuration: configuration)
 recorder.cropRect = CGRect(x: 0.2, y: 0.2, width: 0.5, height: 0.5)
