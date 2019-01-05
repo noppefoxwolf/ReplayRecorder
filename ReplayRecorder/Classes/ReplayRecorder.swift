@@ -93,13 +93,15 @@ public class ReplayRecorder {
   private func process(_ pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
     let width = CVPixelBufferGetWidth(pixelBuffer)
     let height = CVPixelBufferGetHeight(pixelBuffer)
-    let cropRect: CGRect = CGRect(x: CGFloat(width) * self.cropRect.minX,
-                                  y: CGFloat(height) * (1.0 - self.cropRect.maxY),
-                                  width: CGFloat(width) * self.cropRect.width,
-                                  height: CGFloat(height) * self.cropRect.height)
+    let cropRect: CGRect = CGRect(x: (CGFloat(width) * self.cropRect.minX).rounded(.toNearestOrEven),
+                                  y: (CGFloat(height) * (1.0 - self.cropRect.maxY)).rounded(.toNearestOrEven),
+                                  width: (CGFloat(width) * self.cropRect.width).rounded(.toNearestOrEven),
+                                  height: (CGFloat(height) * self.cropRect.height).rounded(.toNearestOrEven))
+    let transform = CGAffineTransform(translationX: -cropRect.minX.rounded(.toNearestOrEven),
+                                      y: -cropRect.minY.rounded(.toNearestOrEven))
     let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
       .cropped(to: cropRect)
-      .transformed(by: CGAffineTransform(translationX: -cropRect.minX, y: -cropRect.minY))
+      .transformed(by: transform)
     let pixelFormatType = CVPixelBufferGetPixelFormatType(pixelBuffer)
     var pixelBufferOut: CVPixelBuffer? = nil
     CVPixelBufferCreate(kCFAllocatorDefault,

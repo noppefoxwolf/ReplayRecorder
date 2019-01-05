@@ -14,7 +14,7 @@ class ViewController: UIViewController {
   
   lazy var configuration: ReplayRecorder.Configuration = {
     var configuration = ReplayRecorder.Configuration()
-    configuration.videoSize = toggleSwitch.bounds.size
+    configuration.videoSize = toggleSwitch.bounds.size.applying(.init(scaleX: 6, y: 6)).roundedEven() //偶数・scale適用がオススメ
     return configuration
   }()
   lazy var recorder: ReplayRecorder = .init(configuration: configuration)
